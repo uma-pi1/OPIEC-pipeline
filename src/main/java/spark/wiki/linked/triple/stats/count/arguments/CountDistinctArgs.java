@@ -35,7 +35,7 @@ public class CountDistinctArgs {
         logger.info("Begin spark application: CountDistinctArgs");
 
         // Initializations
-        String WL_DIR = args[0];
+        String READ_DIR = args[0];
         String WRITE_DIR = args[1];
         SparkConf conf = new SparkConf().setAppName("WikiTriplesLinked").remove("spark.serializer");
         context = new JavaSparkContext(conf);
@@ -44,7 +44,7 @@ public class CountDistinctArgs {
         Schema triplesSchema = AvroUtils.toSchema(TripleLinked.class.getName());
         Job triplesInputJob = AvroUtils.getJobInputKeyAvroSchema(triplesSchema);
         JavaPairRDD<AvroKey<TripleLinked>, NullWritable> wikiTriplesPairRDD = (JavaPairRDD<AvroKey<TripleLinked>, NullWritable>)
-                context.newAPIHadoopFile(WL_DIR, AvroKeyInputFormat.class, TripleLinked.class, NullWritable.class, triplesInputJob.getConfiguration());
+                context.newAPIHadoopFile(READ_DIR, AvroKeyInputFormat.class, TripleLinked.class, NullWritable.class, triplesInputJob.getConfiguration());
 
         // Useless arguments (excluding triples having the same link for subj/obj)
         JavaPairRDD<String, Integer> argsRDD = wikiTriplesPairRDD.flatMapToPair((Tuple2<AvroKey<TripleLinked>, NullWritable> tuple) -> {

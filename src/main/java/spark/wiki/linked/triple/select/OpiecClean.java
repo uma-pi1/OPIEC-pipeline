@@ -33,8 +33,8 @@ public class OpiecClean {
 
     public static void main(String args[]) throws IOException {
         // Initializations
-        String WA_DIR = args[0];
-        String WLNC_DIR = args[1];
+        String OPIEC_DIR = args[0];
+        String OPIEC_CLEAN_DIR = args[1];
         SparkConf conf = new SparkConf().setAppName("WikiTriplesLinked").remove("spark.serializer");
         context = new JavaSparkContext(conf);
         Dictionary DICT_CONCEPTS = new Dictionary("/concepts/enwiki-latest-all-titles-in-ns0_lowercased.dict");
@@ -44,7 +44,7 @@ public class OpiecClean {
         Schema triplesSchema = AvroUtils.toSchema(TripleLinked.class.getName());
         Job triplesInputJob = AvroUtils.getJobInputKeyAvroSchema(triplesSchema);
         JavaPairRDD<AvroKey<TripleLinked>, NullWritable> wikiArticlesNLPPairRDD = (JavaPairRDD<AvroKey<TripleLinked>, NullWritable>)
-                context.newAPIHadoopFile(WA_DIR, AvroKeyInputFormat.class, TripleLinked.class, NullWritable.class, triplesInputJob.getConfiguration());
+                context.newAPIHadoopFile(OPIEC_DIR, AvroKeyInputFormat.class, TripleLinked.class, NullWritable.class, triplesInputJob.getConfiguration());
 
         JavaRDD<TripleLinked> triplesRDD = wikiArticlesNLPPairRDD.map(tuple -> {
             TripleLinked triple = AvroUtils.cloneAvroRecord(tuple._1().datum());
@@ -114,7 +114,7 @@ public class OpiecClean {
         // Serializing to AVRO
         JavaPairRDD<AvroKey<TripleLinked>, NullWritable> javaPairRDD = triplesRDD.mapToPair(r -> new Tuple2<>(new AvroKey<>(r), NullWritable.get()));
         Job job = AvroUtils.getJobOutputKeyAvroSchema(TripleLinked.getClassSchema());
-        javaPairRDD.saveAsNewAPIHadoopFile(WLNC_DIR, AvroKey.class, NullWritable.class,
+        javaPairRDD.saveAsNewAPIHadoopFile(OPIEC_CLEAN_DIR, AvroKey.class, NullWritable.class,
                 AvroKeyOutputFormat.class, job.getConfiguration());
     }
 }

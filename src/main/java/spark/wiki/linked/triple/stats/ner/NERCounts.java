@@ -29,7 +29,7 @@ public class NERCounts {
 
     public static void main(String [] args) {
         // Initializations
-        String WLNCClean_DIR = args[0];
+        String OPIEC_CLEAN_DIR = args[0];
         String pairCountsWriteDir = args[1];
         String entityCountsWriteDir = args[2];
         SparkConf conf = new SparkConf().setAppName("NERCounts").remove("spark.serializer");
@@ -41,7 +41,7 @@ public class NERCounts {
         Schema triplesSchema = AvroUtils.toSchema(TripleLinked.class.getName());
         Job triplesInputJob = AvroUtils.getJobInputKeyAvroSchema(triplesSchema);
         JavaPairRDD<AvroKey<TripleLinked>, NullWritable> triplesPairRDD = (JavaPairRDD<AvroKey<TripleLinked>, NullWritable>)
-                context.newAPIHadoopFile(WLNCClean_DIR, AvroKeyInputFormat.class, TripleLinked.class, NullWritable.class, triplesInputJob.getConfiguration());
+                context.newAPIHadoopFile(OPIEC_CLEAN_DIR, AvroKeyInputFormat.class, TripleLinked.class, NullWritable.class, triplesInputJob.getConfiguration());
 
         // Argument pair NER counts
         JavaPairRDD<String, Integer> nerPairsCount = triplesPairRDD.mapToPair(tuple -> {

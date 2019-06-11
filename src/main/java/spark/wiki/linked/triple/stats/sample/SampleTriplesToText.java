@@ -19,13 +19,13 @@ public class SampleTriplesToText {
     /**
      * @author Kiril Gashteovski
      *
-     * Take a sample triple WA
+     * Take a sample of triples from OPIEC
      */
     private static JavaSparkContext context;
 
     public static void main(String args[]) {
         // Initializations
-        String WA_DIR = args[0];
+        String OPIEC_DIR = args[0];
         String WRITE_DIR = args[1];
         int sampleSize = Integer.parseInt(args[2]);
 
@@ -36,7 +36,7 @@ public class SampleTriplesToText {
         Schema triplesSchema = AvroUtils.toSchema(TripleLinked.class.getName());
         Job triplesInputJob = AvroUtils.getJobInputKeyAvroSchema(triplesSchema);
         JavaPairRDD<AvroKey<TripleLinked>, NullWritable> wikiTriplesLinkedPairRDD = (JavaPairRDD<AvroKey<TripleLinked>, NullWritable>)
-                context.newAPIHadoopFile(WA_DIR, AvroKeyInputFormat.class, TripleLinked.class, NullWritable.class, triplesInputJob.getConfiguration());
+                context.newAPIHadoopFile(OPIEC_DIR, AvroKeyInputFormat.class, TripleLinked.class, NullWritable.class, triplesInputJob.getConfiguration());
 
         // Take the sample
         List<String> tripleSampleList = wikiTriplesLinkedPairRDD.map(tuple -> {

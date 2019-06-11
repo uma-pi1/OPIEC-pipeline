@@ -24,7 +24,7 @@ public class CountSVTriples {
 
     public static void main(String args[]) {
         // Initializations
-        String WA_DIR = args[0];
+        String OPIEC_DIR = args[0];
         String WRITE_DIR = args[1];
         SparkConf conf = new SparkConf().setAppName("WikiTriplesLinked").remove("spark.serializer");
         context = new JavaSparkContext(conf);
@@ -33,7 +33,7 @@ public class CountSVTriples {
         Schema triplesSchema = AvroUtils.toSchema(TripleLinked.class.getName());
         Job triplesInputJob = AvroUtils.getJobInputKeyAvroSchema(triplesSchema);
         JavaPairRDD<AvroKey<TripleLinked>, NullWritable> wikiTriplesPairRDD = (JavaPairRDD<AvroKey<TripleLinked>, NullWritable>)
-                context.newAPIHadoopFile(WA_DIR, AvroKeyInputFormat.class, TripleLinked.class, NullWritable.class, triplesInputJob.getConfiguration());
+                context.newAPIHadoopFile(OPIEC_DIR, AvroKeyInputFormat.class, TripleLinked.class, NullWritable.class, triplesInputJob.getConfiguration());
 
         // Useless arguments (excluding triples having the same link for subj/obj)
         JavaPairRDD<String, Integer> SVTriplesRDD = wikiTriplesPairRDD.mapToPair((Tuple2<AvroKey<TripleLinked>, NullWritable> tuple) -> {
