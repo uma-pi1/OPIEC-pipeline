@@ -3,9 +3,9 @@ package de.uni_mannheim.experiment.kb.dbpedia;
 import avroschema.linked.TripleLinked;
 import avroschema.util.TripleLinkedUtils;
 
-import de.uni_mannheim.querydbpedia.KBHitsCounting;
-import de.uni_mannheim.querydbpedia.KBQueryUtils;
-import de.uni_mannheim.querydbpedia.query.offline.RelsBetweenWikiPages;
+import de.uni_mannheim.querykb.KBHitsCounting;
+import de.uni_mannheim.querykb.KBQueryUtils;
+import de.uni_mannheim.querykb.query.offline.RelsBetweenWikiPages;
 
 import org.apache.avro.file.DataFileReader;
 import org.apache.avro.io.DatumReader;

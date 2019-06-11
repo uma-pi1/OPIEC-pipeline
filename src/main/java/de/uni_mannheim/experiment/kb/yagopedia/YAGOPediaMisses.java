@@ -2,8 +2,8 @@ package de.uni_mannheim.experiment.kb.yagopedia;
 
 import avroschema.linked.TripleLinked;
 import avroschema.util.TripleLinkedUtils;
-import de.uni_mannheim.querydbpedia.KBHitsCounting;
-import de.uni_mannheim.querydbpedia.query.offline.RelsBetweenWikiPages;
+import de.uni_mannheim.querykb.KBHitsCounting;
+import de.uni_mannheim.querykb.query.offline.RelsBetweenWikiPages;
 import de.uni_mannheim.utils.RedirectLinksMap;
 import org.apache.avro.Schema;
 import org.apache.avro.file.DataFileReader;

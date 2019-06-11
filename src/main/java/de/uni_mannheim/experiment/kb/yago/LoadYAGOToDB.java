@@ -1,6 +1,6 @@
 package de.uni_mannheim.experiment.kb.yago;
 
-import de.uni_mannheim.querydbpedia.KBQueryDB;
+import de.uni_mannheim.querykb.KBQueryDB;
 
 import java.io.File;
 import java.sql.SQLException;

@@ -1,8 +1,8 @@
 package de.uni_mannheim.experiment.kb.yago;
 
 import avroschema.linked.TripleLinked;
-import de.uni_mannheim.querydbpedia.KBHitsCounting;
-import de.uni_mannheim.querydbpedia.query.offline.RelsBetweenWikiPages;
+import de.uni_mannheim.querykb.KBHitsCounting;
+import de.uni_mannheim.querykb.query.offline.RelsBetweenWikiPages;
 import org.apache.avro.file.DataFileReader;
 import org.apache.avro.io.DatumReader;
 import org.apache.avro.specific.SpecificDatumReader;
