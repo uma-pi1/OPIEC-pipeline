@@ -1,0 +1,24 @@
+{"namespace": "avroschema.linked",
+ "type": "record",
+ "name": "WikiArticleLinked",
+ "fields": [
+    {"name": "title", "type": "string", "avro.java.string": "String"},
+    {"name": "id",  "type": "string"},
+    {"name": "url", "type": "string"},
+    {"name": "text", "type": "string"},
+    {"name": "links", 
+    	"type" : ["null", {
+        	"type" : "array", 
+        	"items": {
+            	"name": "WikiLink", 
+            	"type": "record", 
+            	"fields": [
+            		{"name": "offset_begin_ind", "type": "int"},
+                	{"name": "offset_end_ind", "type": "int"},
+                	{"name": "phrase", "type": "string"},
+                	{"name": "wiki_link", "type": "string"}
+ 				]
+ 			}
+ 		}]
+	}
+]}
