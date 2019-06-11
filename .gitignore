@@ -3,4 +3,3 @@ target/*
 *.iml
 src/main/resources/concepts/*
 src/main/resources/redirects/*
-src/main/resources/minie-resources/*
