@@ -1,0 +1,8 @@
+null,dep
+partmod,vmod
+infmod,vmod
+xsubj,nsubj
+abbrev,appos
+complm,mark
+purpcl,advcl
+measure,num

@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PMML xmlns="http://www.dmg.org/PMML-4_3" version="4.3">
+	<Header>
+		<Application name="JPMML-SkLearn" version="1.5.2"/>
+		<Timestamp>2018-07-22T13:03:33Z</Timestamp>
+	</Header>
+	<MiningBuildTask>
+		<Extension>PMMLPipeline(steps=[('mapper', DataFrameMapper(default=False, df_out=False,
+        features=[(['droppedPrep'], ContinuousDomain(high_value=None, invalid_value_replacement=None,
+         invalid_value_treatment='return_invalid', low_value=None,
+         missing_value_replacement=None, missing_value_treatment='as_is',
+         missing_values=None, outlier_treatment='as_is', with_dat...h_data=True, with_statistics=True), LabelBinarizer(neg_label=0, pos_label=1, sparse_output=False)])],
+        input_df=False, sparse=False)),
+       ('scaler', MinMaxScaler(copy=True, feature_range=(0, 1))),
+       ('classifier', LogisticRegression(C=1, class_weight='balanced', dual=False,
+          fit_intercept=True, intercept_scaling=1, max_iter=100,
+          multi_class='ovr', n_jobs=1, penalty='l1', random_state=None,
+          solver='liblinear', tol=0.0001, verbose=0, warm_start=False))])</Extension>
+	</MiningBuildTask>
+	<DataDictionary>
+		<DataField name="y" optype="categorical" dataType="integer">
+			<Value value="0"/>
+			<Value value="1"/>
+		</DataField>
+		<DataField name="droppedPrep" optype="continuous" dataType="double">
+			<Interval closure="closedClosed" leftMargin="0.0" rightMargin="1.0"/>
+		</DataField>
+		<DataField name="ObjBeforeSubj" optype="continuous" dataType="double">
+			<Interval closure="closedClosed" leftMargin="0.0" rightMargin="1.0"/>
+		</DataField>
+		<DataField name="RelWholeString" optype="continuous" dataType="double">
+			<Interval closure="closedClosed" leftMargin="0.0" rightMargin="1.0"/>
+		</DataField>
+		<DataField name="POSTagSubj" optype="continuous" dataType="double">
+			<Interval closure="closedClosed" leftMargin="0.0" rightMargin="1.0"/>
+		</DataField>
+		<DataField name="Poss" optype="continuous" dataType="double">
+			<Interval closure="closedClosed" leftMargin="0.0" rightMargin="1.0"/>
+		</DataField>
+		<DataField name="InfiniteVerbSubj" optype="continuous" dataType="double">
+			<Interval closure="closedClosed" leftMargin="0.0" rightMargin="1.0"/>
+		</DataField>
+		<DataField name="InfiniteVerbRel" optype="continuous" dataType="double">
+			<Interval closure="closedClosed" leftMargin="0.0" rightMargin="1.0"/>
+		</DataField>
+		<DataField name="OrderOfExtraction" optype="continuous" dataType="double">
+			<Interval closure="closedClosed" leftMargin="0.0" rightMargin="1.0"/>
+		</DataField>
+		<DataField name="ExtractionContainDep" optype="continuous" dataType="double">
+			<Interval closure="closedClosed" leftMargin="0.0" rightMargin="1.0"/>
+		</DataField>
+		<DataField name="occursInDict" optype="continuous" dataType="double">
+			<Interval closure="closedClosed" leftMargin="0.0" rightMargin="1.0"/>
+		</DataField>
+		<DataField name="occursInAggressive" optype="continuous" dataType="double">
+			<Interval closure="closedClosed" leftMargin="0.0" rightMargin="1.0"/>
+		</DataField>
+		<DataField name="ProcessedConjSubj" optype="continuous" dataType="double">
+			<Interval closure="closedClosed" leftMargin="0.0" rightMargin="1.0"/>
+		</DataField>
+		<DataField name="ProcessedConjRel" optype="continuous" dataType="double">
+			<Interval closure="closedClosed" leftMargin="0.0" rightMargin="1.0"/>
+		</DataField>
+		<DataField name="ProcessedConjObj" optype="continuous" dataType="double">
+			<Interval closure="closedClosed" leftMargin="0.0" rightMargin="1.0"/>
+		</DataField>
+		<DataField name="isRelFreq100k" optype="continuous" dataType="double">
+			<Interval closure="closedClosed" leftMargin="0.0" rightMargin="1.0"/>
+		</DataField>
+		<DataField name="containsSpace" optype="continuous" dataType="double">
+			<Interval closure="closedClosed" leftMargin="0.0" rightMargin="1.0"/>
+		</DataField>
+		<DataField name="containsTime" optype="continuous" dataType="double">
+			<Interval closure="closedClosed" leftMargin="0.0" rightMargin="1.0"/>
+		</DataField>
+		<DataField name="extractsQuantity" optype="continuous" dataType="double">
+			<Interval closure="closedClosed" leftMargin="0.0" rightMargin="1.0"/>
+		</DataField>
+		<DataField name="droppedAllOptionalAdverbial" optype="continuous" dataType="double">
+			<Interval closure="closedClosed" leftMargin="0.0" rightMargin="1.0"/>
+		</DataField>
+		<DataField name="Length" optype="continuous" dataType="double">
+			<Interval closure="closedClosed" leftMargin="2.0" rightMargin="150.0"/>
+		</DataField>
+		<DataField name="LengthofExtraction" optype="continuous" dataType="double">
+			<Interval closure="closedClosed" leftMargin="2.0" rightMargin="100.0"/>
+		</DataField>
+		<DataField name="ClauseType" optype="categorical" dataType="string">
+			<Value value="EXISTENTIAL"/>
+			<Value value="NOTYPE"/>
+			<Value value="SV"/>
+			<Value value="SVA"/>
+			<Value value="SVC"/>
+			<Value value="SVO"/>
+			<Value value="SVOA"/>
+			<Value value="SVOC"/>
+			<Value value="SVOO"/>
+		</DataField>
+	</DataDictionary>
+	<TransformationDictionary>
+		<DerivedField name="log(Length)" optype="continuous" dataType="double">
+			<Apply function="ln">
+				<FieldRef field="Length"/>
+			</Apply>
+		</DerivedField>
+		<DerivedField name="log(LengthofExtraction)" optype="continuous" dataType="double">
+			<Apply function="ln">
+				<FieldRef field="LengthofExtraction"/>
+			</Apply>
+		</DerivedField>
+		<DerivedField name="mix_max_scaler(log(Length))" optype="continuous" dataType="double">
+			<Apply function="+">
+				<Apply function="*">
+					<FieldRef field="log(Length)"/>
+					<Constant dataType="double">0.3831315173183361</Constant>
+				</Apply>
+				<Constant dataType="double">-0.6166263894205322</Constant>
+			</Apply>
+		</DerivedField>
+		<DerivedField name="mix_max_scaler(log(LengthofExtraction))" optype="continuous" dataType="double">
+			<Apply function="+">
+				<Apply function="*">
+					<FieldRef field="log(LengthofExtraction)"/>
+					<Constant dataType="double">0.3567147509149807</Constant>
+				</Apply>
+				<Constant dataType="double">-0.24725582386086206</Constant>
+			</Apply>
+		</DerivedField>
+	</TransformationDictionary>
+	<RegressionModel functionName="classification" normalizationMethod="logit">
+		<MiningSchema>
+			<MiningField name="y" usageType="target"/>
+			<MiningField name="droppedPrep" missingValueTreatment="asIs"/>
+			<MiningField name="ObjBeforeSubj" missingValueTreatment="asIs"/>
+			<MiningField name="RelWholeString" missingValueTreatment="asIs"/>
+			<MiningField name="POSTagSubj" missingValueTreatment="asIs"/>
+			<MiningField name="Poss" missingValueTreatment="asIs"/>
+			<MiningField name="InfiniteVerbSubj" missingValueTreatment="asIs"/>
+			<MiningField name="InfiniteVerbRel" missingValueTreatment="asIs"/>
+			<MiningField name="OrderOfExtraction" missingValueTreatment="asIs"/>
+			<MiningField name="ExtractionContainDep" missingValueTreatment="asIs"/>
+			<MiningField name="occursInDict" missingValueTreatment="asIs"/>
+			<MiningField name="occursInAggressive" missingValueTreatment="asIs"/>
+			<MiningField name="ProcessedConjSubj" missingValueTreatment="asIs"/>
+			<MiningField name="ProcessedConjRel" missingValueTreatment="asIs"/>
+			<MiningField name="ProcessedConjObj" missingValueTreatment="asIs"/>
+			<MiningField name="isRelFreq100k" missingValueTreatment="asIs"/>
+			<MiningField name="containsSpace" missingValueTreatment="asIs"/>
+			<MiningField name="containsTime" missingValueTreatment="asIs"/>
+			<MiningField name="extractsQuantity" missingValueTreatment="asIs"/>
+			<MiningField name="droppedAllOptionalAdverbial" missingValueTreatment="asIs"/>
+			<MiningField name="ClauseType" missingValueTreatment="asIs"/>
+			<MiningField name="Length" missingValueTreatment="asIs"/>
+			<MiningField name="LengthofExtraction" missingValueTreatment="asIs"/>
+		</MiningSchema>
+		<Output>
+			<OutputField name="probability(0)" optype="continuous" dataType="double" feature="probability" value="0"/>
+			<OutputField name="probability(1)" optype="continuous" dataType="double" feature="probability" value="1"/>
+		</Output>
+		<ModelStats>
+			<UnivariateStats field="droppedPrep">
+				<Counts totalFreq="1653.0" missingFreq="0.0" invalidFreq="0.0"/>
+				<NumericInfo minimum="0.0" maximum="1.0" mean="0.07138535995160314" standardDeviation="0.25746745490679634" median="0.0" interQuartileRange="0.0"/>
+			</UnivariateStats>
+			<UnivariateStats field="ObjBeforeSubj">
+				<Counts totalFreq="1653.0" missingFreq="0.0" invalidFreq="0.0"/>
+				<NumericInfo minimum="0.0" maximum="1.0" mean="0.1088929219600726" standardDeviation="0.3115048210013292" median="0.0" interQuartileRange="0.0"/>
+			</UnivariateStats>
+			<UnivariateStats field="RelWholeString">
+				<Counts totalFreq="1653.0" missingFreq="0.0" invalidFreq="0.0"/>
+				<NumericInfo minimum="0.0" maximum="1.0" mean="0.4204476709013914" standardDeviation="0.493630861003429" median="0.0" interQuartileRange="1.0"/>
+			</UnivariateStats>
+			<UnivariateStats field="POSTagSubj">
+				<Counts totalFreq="1653.0" missingFreq="0.0" invalidFreq="0.0"/>
+				<NumericInfo minimum="0.0" maximum="1.0" mean="0.02661826981246219" standardDeviation="0.16096501956839301" median="0.0" interQuartileRange="0.0"/>
+			</UnivariateStats>
+			<UnivariateStats field="Poss">
+				<Counts totalFreq="1653.0" missingFreq="0.0" invalidFreq="0.0"/>
+				<NumericInfo minimum="0.0" maximum="1.0" mean="0.08045977011494253" standardDeviation="0.2720036681884881" median="0.0" interQuartileRange="0.0"/>
+			</UnivariateStats>
+			<UnivariateStats field="InfiniteVerbSubj">
+				<Counts totalFreq="1653.0" missingFreq="0.0" invalidFreq="0.0"/>
+				<NumericInfo minimum="0.0" maximum="1.0" mean="0.012099213551119177" standardDeviation="0.10932896497526898" median="0.0" interQuartileRange="0.0"/>
+			</UnivariateStats>
+			<UnivariateStats field="InfiniteVerbRel">
+				<Counts totalFreq="1653.0" missingFreq="0.0" invalidFreq="0.0"/>
+				<NumericInfo minimum="0.0" maximum="1.0" mean="0.08711433756805807" standardDeviation="0.2820025350207627" median="0.0" interQuartileRange="0.0"/>
+			</UnivariateStats>
+			<UnivariateStats field="OrderOfExtraction">
+				<Counts totalFreq="1653.0" missingFreq="0.0" invalidFreq="0.0"/>
+				<NumericInfo minimum="0.0" maximum="1.0" mean="0.8342407743496673" standardDeviation="0.37186436339360995" median="1.0" interQuartileRange="0.0"/>
+			</UnivariateStats>
+			<UnivariateStats field="ExtractionContainDep">
+				<Counts totalFreq="1653.0" missingFreq="0.0" invalidFreq="0.0"/>
+				<NumericInfo minimum="0.0" maximum="1.0" mean="0.09800362976406533" standardDeviation="0.29731955589421516" median="0.0" interQuartileRange="0.0"/>
+			</UnivariateStats>
+			<UnivariateStats field="occursInDict">
+				<Counts totalFreq="1653.0" missingFreq="0.0" invalidFreq="0.0"/>
+				<NumericInfo minimum="0.0" maximum="1.0" mean="0.45856019358741684" standardDeviation="0.49827978329898925" median="0.0" interQuartileRange="1.0"/>
+			</UnivariateStats>
+			<UnivariateStats field="occursInAggressive">
+				<Counts totalFreq="1653.0" missingFreq="0.0" invalidFreq="0.0"/>
+				<NumericInfo minimum="0.0" maximum="1.0" mean="0.2752571082879613" standardDeviation="0.44664374239981336" median="0.0" interQuartileRange="1.0"/>
+			</UnivariateStats>
+			<UnivariateStats field="ProcessedConjSubj">
+				<Counts totalFreq="1653.0" missingFreq="0.0" invalidFreq="0.0"/>
+				<NumericInfo minimum="0.0" maximum="1.0" mean="0.04476709013914096" standardDeviation="0.2067921608272784" median="0.0" interQuartileRange="0.0"/>
+			</UnivariateStats>
+			<UnivariateStats field="ProcessedConjRel">
+				<Counts totalFreq="1653.0" missingFreq="0.0" invalidFreq="0.0"/>
+				<NumericInfo minimum="0.0" maximum="1.0" mean="0.022988505747126436" standardDeviation="0.14986672195868161" median="0.0" interQuartileRange="0.0"/>
+			</UnivariateStats>
+			<UnivariateStats field="ProcessedConjObj">
+				<Counts totalFreq="1653.0" missingFreq="0.0" invalidFreq="0.0"/>
+				<NumericInfo minimum="0.0" maximum="1.0" mean="0.1088929219600726" standardDeviation="0.3115048210013292" median="0.0" interQuartileRange="0.0"/>
+			</UnivariateStats>
+			<UnivariateStats field="isRelFreq100k">
+				<Counts totalFreq="1653.0" missingFreq="0.0" invalidFreq="0.0"/>
+				<NumericInfo minimum="0.0" maximum="1.0" mean="0.808832425892317" standardDeviation="0.3932207175588114" median="1.0" interQuartileRange="0.0"/>
+			</UnivariateStats>
+			<UnivariateStats field="containsSpace">
+				<Counts totalFreq="1653.0" missingFreq="0.0" invalidFreq="0.0"/>
+				<NumericInfo minimum="0.0" maximum="1.0" mean="0.050816696914700546" standardDeviation="0.21962322333801584" median="0.0" interQuartileRange="0.0"/>
+			</UnivariateStats>
+			<UnivariateStats field="containsTime">
+				<Counts totalFreq="1653.0" missingFreq="0.0" invalidFreq="0.0"/>
+				<NumericInfo minimum="0.0" maximum="1.0" mean="0.102843315184513" standardDeviation="0.30375412376850447" median="0.0" interQuartileRange="0.0"/>
+			</UnivariateStats>
+			<UnivariateStats field="extractsQuantity">
+				<Counts totalFreq="1653.0" missingFreq="0.0" invalidFreq="0.0"/>
+				<NumericInfo minimum="0.0" maximum="1.0" mean="0.0054446460980036296" standardDeviation="0.07358669667046568" median="0.0" interQuartileRange="0.0"/>
+			</UnivariateStats>
+			<UnivariateStats field="droppedAllOptionalAdverbial">
+				<Counts totalFreq="1653.0" missingFreq="0.0" invalidFreq="0.0"/>
+				<NumericInfo minimum="0.0" maximum="1.0" mean="0.22141560798548093" standardDeviation="0.41519963454451736" median="0.0" interQuartileRange="0.0"/>
+			</UnivariateStats>
+			<UnivariateStats field="Length">
+				<Counts totalFreq="1653.0" missingFreq="0.0" invalidFreq="0.0"/>
+				<NumericInfo minimum="5.0" maximum="68.0" mean="28.46098003629764" standardDeviation="11.463631258408505" median="27.0" interQuartileRange="16.0"/>
+			</UnivariateStats>
+			<UnivariateStats field="LengthofExtraction">
+				<Counts totalFreq="1653.0" missingFreq="0.0" invalidFreq="0.0"/>
+				<NumericInfo minimum="2.0" maximum="33.0" mean="7.493647912885662" standardDeviation="4.34807279440673" median="6.0" interQuartileRange="5.0"/>
+			</UnivariateStats>
+			<UnivariateStats field="ClauseType">
+				<Counts totalFreq="1653.0" missingFreq="0.0" invalidFreq="0.0"/>
+				<DiscrStats>
+					<Array type="string">EXISTENTIAL NOTYPE SV SVA SVC SVO SVOA SVOC SVOO</Array>
+					<Array type="int">5 99 63 402 318 681 9 63 13</Array>
+				</DiscrStats>
+			</UnivariateStats>
+		</ModelStats>
+		<RegressionTable intercept="-0.19515849573269337" targetCategory="1">
+			<NumericPredictor name="droppedPrep" coefficient="0.4834295135236461"/>
+			<NumericPredictor name="ObjBeforeSubj" coefficient="-0.2536682077669318"/>
+			<NumericPredictor name="RelWholeString" coefficient="0.266238742020798"/>
+			<NumericPredictor name="POSTagSubj" coefficient="0.1304736952425432"/>
+			<NumericPredictor name="Poss" coefficient="0.5914223690699598"/>
+			<NumericPredictor name="InfiniteVerbSubj" coefficient="-1.6332583558080975"/>
+			<NumericPredictor name="InfiniteVerbRel" coefficient="-0.9559857093439559"/>
+			<NumericPredictor name="OrderOfExtraction" coefficient="0.46651422813123444"/>
+			<NumericPredictor name="ExtractionContainDep" coefficient="-0.9931467237585714"/>
+			<NumericPredictor name="occursInDict" coefficient="0.929263036467133"/>
+			<NumericPredictor name="occursInAggressive" coefficient="0.07095071817841661"/>
+			<NumericPredictor name="ProcessedConjSubj" coefficient="-0.9096180774055794"/>
+			<NumericPredictor name="ProcessedConjRel" coefficient="-0.307601431547855"/>
+			<NumericPredictor name="ProcessedConjObj" coefficient="-1.0173408239507225"/>
+			<NumericPredictor name="isRelFreq100k" coefficient="0.45441675178263785"/>
+			<NumericPredictor name="containsSpace" coefficient="1.2345363254255683"/>
+			<NumericPredictor name="containsTime" coefficient="0.722687450050021"/>
+			<NumericPredictor name="extractsQuantity" coefficient="-1.9239554323872117"/>
+			<NumericPredictor name="droppedAllOptionalAdverbial" coefficient="0.15190082143799571"/>
+			<NumericPredictor name="mix_max_scaler(log(Length))" coefficient="-1.930012621309391"/>
+			<NumericPredictor name="mix_max_scaler(log(LengthofExtraction))" coefficient="1.480538500057727"/>
+			<CategoricalPredictor name="ClauseType" value="NOTYPE" coefficient="0.7031505545353439"/>
+			<CategoricalPredictor name="ClauseType" value="SV" coefficient="-0.6619410537414345"/>
+			<CategoricalPredictor name="ClauseType" value="SVA" coefficient="0.08003438650357957"/>
+			<CategoricalPredictor name="ClauseType" value="SVO" coefficient="-0.14046810228778095"/>
+			<CategoricalPredictor name="ClauseType" value="SVOC" coefficient="-1.565753789581029"/>
+			<CategoricalPredictor name="ClauseType" value="SVOO" coefficient="-0.9666078204908881"/>
+		</RegressionTable>
+		<RegressionTable intercept="0.0" targetCategory="0"/>
+	</RegressionModel>
+</PMML>
