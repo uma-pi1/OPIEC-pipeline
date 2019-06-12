@@ -13,8 +13,9 @@ There are two major corpora released with OPIEC:
 For more details concerning the construction, analysis and statistics of the corpus, read the AKBC paper [*"OPIEC: An Open Information Extraction Corpus*"](https://arxiv.org/pdf/1904.12324.pdf). To download the data and get additional resources, please visit the [project page](https://www.uni-mannheim.de/dws/research/resources/opiec/).
 
 ## Pipeline 
-
-<img src="img/opiec-pipeline.png" align="center" width=600>
+<p align="center">
+  <img src="img/opiec-pipeline.png" width=700>
+</p>
 
 ## Citation
 
