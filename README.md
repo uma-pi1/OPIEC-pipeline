@@ -18,7 +18,7 @@ There are two major corpora released with OPIEC:
 1. OPIEC: an OIE corpus containing hundreds of millions of triples.
 2. WikipediaNLP: the entire English Wikipedia with NLP annotations.
 
-For more details concerning the construction, analysis and statistics of the corpus, read the AKBC paper [*"OPIEC: An Open Information Extraction Corpus*"](https://arxiv.org/pdf/1904.12324.pdf). To download the data and get additional resources, please visit the [project page](https://www.uni-mannheim.de/dws/research/resources/opiec/).
+For more details concerning the construction, analysis and statistics of the corpus, read the AKBC paper [*"OPIEC: An Open Information Extraction Corpus*"](https://arxiv.org/pdf/1904.12324.pdf). To download the data and get additional resources, please visit the [project page](https://www.uni-mannheim.de/dws/research/resources/opiec/). For reading the data, please visit the GitHub repository [OPIEC](https://github.com/uma-pi1/OPIEC).
 
 ## Pipeline 
 <p align="center">
