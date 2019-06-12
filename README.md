@@ -14,7 +14,7 @@ For more details concerning the construction, analysis and statistics of the cor
 
 ## Pipeline 
 
-<img src="img/opiec-pipeline.png" align="center" width=400>
+<img src="img/opiec-pipeline.png" align="center" width=600>
 
 ## Citation
 
