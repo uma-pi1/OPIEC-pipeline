@@ -20,6 +20,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * @author Kiril Gashteovski
+ */
+
 public class WikiTripleLinked {
     private AnnotatedProposition aProp;
     private SentenceLinked s;

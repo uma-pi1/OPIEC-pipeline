@@ -31,6 +31,9 @@ import scala.Tuple2;
 import java.io.IOException;
 import java.util.HashMap;
 
+/**
+ * @author Kiril Gashteovski
+ */
 public class OPIEC {
     public static final AnnotationPipeline temporalPipeline = NLPPipeline.initTimePipeline();
     private static JavaSparkContext context;

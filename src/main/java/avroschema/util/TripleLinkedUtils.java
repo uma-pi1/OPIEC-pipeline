@@ -11,6 +11,9 @@ import it.unimi.dsi.fastutil.objects.ObjectOpenHashSet;
 import java.util.HashMap;
 import java.util.List;
 
+/**
+ * @author Kiril Gashteovski
+ */
 public class TripleLinkedUtils {
     public static String relToLemmatizedString(TripleLinked triple) {
         StringBuilder sb = new StringBuilder();

@@ -4,6 +4,9 @@ import de.uni_mannheim.constant.POS_TAG;
 import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.ling.IndexedWord;
 
+/**
+ * @author Kiril Gashteovski
+ */
 public class WordUtils {
     /**
      * Checks if a word is some kind of a verb (i.e. if it has POS tag: VB, VBD, VBG, VBN, VBP or VBZ)

@@ -17,6 +17,9 @@ import edu.stanford.nlp.semgraph.SemanticGraph;
 import edu.stanford.nlp.semgraph.SemanticGraphCoreAnnotations.BasicDependenciesAnnotation;
 import edu.stanford.nlp.util.CoreMap;
 
+/**
+ * @author Kiril Gashteovski
+ */
 public class WikiArticleTextDocument {
     /** The text from the document that needs to be processed **/
     private String text;

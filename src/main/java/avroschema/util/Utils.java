@@ -28,6 +28,9 @@ import org.apache.spark.broadcast.Broadcast;
 import java.io.IOException;
 import java.util.*;
 
+/**
+ * @author Kiril Gashteovski
+ */
 public class Utils {
     public static String sentenceLinkedToString(SentenceLinked s) {
         StringBuilder sb = new StringBuilder();

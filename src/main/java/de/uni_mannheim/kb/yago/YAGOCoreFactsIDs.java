@@ -8,6 +8,10 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashSet;
 
+/**
+ * @author Sven Hertling
+ * @author Kiril Gashteovski
+ */
 public class YAGOCoreFactsIDs {
     private static final Logger logger = LoggerFactory.getLogger(YAGOCoreFacts.class);
     private static final String FACTS_FILE_PATH = "/KBs/yagoFacts.tsv";

@@ -18,6 +18,9 @@ import it.unimi.dsi.fastutil.objects.ObjectOpenHashSet;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * @author Kiril Gashteovski
+ */
 public class WordCollectionUtils {
     /**
      * Given a pivot word and a list of words, return a list of "chained words" (i.e. words with same tags, or NERs

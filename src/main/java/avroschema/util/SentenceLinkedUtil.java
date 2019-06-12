@@ -12,6 +12,9 @@ import edu.stanford.nlp.pipeline.AnnotationPipeline;
 
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 
+/**
+ * @author Kiril Gashteovski
+ */
 public class SentenceLinkedUtil {
     /**
      * Given a sentence (withLinkedTokens, return the string of the sentence

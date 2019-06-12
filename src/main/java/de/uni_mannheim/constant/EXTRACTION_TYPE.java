@@ -1,5 +1,8 @@
 package de.uni_mannheim.constant;
 
+/**
+ * @author Kiril Gashteovski
+ */
 public class EXTRACTION_TYPE {
     public static final String SV = "SV";
     public static final String SVA = "SVA";

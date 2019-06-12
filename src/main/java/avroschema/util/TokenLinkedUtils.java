@@ -12,6 +12,9 @@ import it.unimi.dsi.fastutil.objects.ObjectOpenHashSet;
 
 import java.util.List;
 
+/**
+ * @author Kiril Gashteovski
+ */
 public class TokenLinkedUtils {
     /**
      * Given an IndexedWord object, return TokenLinked (empty link assumed)

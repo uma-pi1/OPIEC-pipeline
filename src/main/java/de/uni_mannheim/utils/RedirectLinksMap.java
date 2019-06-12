@@ -9,6 +9,9 @@ import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * @author Kiril Gashteovski
+ */
 public class RedirectLinksMap {
     // Each line is stored in the format "link_1 TAB link_2"
     private ObjectOpenHashSet<String> linkLines;
