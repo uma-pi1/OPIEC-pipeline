@@ -8,6 +8,7 @@
    * [NLP Pipeline](#nlp-pipeline)
    * [OPIEC](#opiec)
    * [OPIEC-Clean and OPIEC-Linked](#opiec-clean-and-opiec-linked)
+* [Experiments](#experiments)
 * [Citation](#citation)
 
 ## Introduction
@@ -40,6 +41,10 @@ For generating OPIEC (sometimes referred to as *"OPIEC-Raw"*), the input from th
 ### OPIEC-Clean and OPIEC-Linked
 
 To generate OPIEC-Clean / OPIEC-Linked, the corpus OPIEC-Raw is needed as an input. Then, from the package `spark.wiki.linked.triple.select` use OpiecClean / OpiecLinked respectively. For running OPIEC-Clean, you need to download the [concepts data](http://data.dws.informatik.uni-mannheim.de/opiec/concepts.zip) and uncompress it in `src/main/resources`. 
+
+## Experiments
+
+All the experiments conducted in the paper can be found in either the package `de.uni_mannheim.experiment.kb` or in `spark.wiki.linked.triple.stats`.
 
 ## Citation
 
