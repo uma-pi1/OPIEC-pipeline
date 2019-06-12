@@ -17,6 +17,10 @@ For more details concerning the construction, analysis and statistics of the cor
   <img src="img/opiec-pipeline.png" width=700>
 </p>
 
+###Preprocessing
+
+In this step, a Wikipedia dump is cleaned. With a [modified version](https://github.com/samuelbroscheit/wikiextractor-wikimentions) of the [Wikiextractor](https://github.com/attardi/wikiextractor), the plain text from Wikipedia articles is kept. In addition, the information about the links found within the articles is kept.
+
 ## Citation
 
 If you use any of these corpora, or use the findings from the paper, please cite: 
